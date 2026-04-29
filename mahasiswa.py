@@ -27,3 +27,17 @@ class Mahasiswa:
             self.menghitung_nilai_akhir()
         else:
             print("Masukkan nilai dengan angka anatar 0 - 100")
+            # Grade
+    def get_grade(self):
+        if self.__nilai_akhir >= 85:
+            return "A"
+        elif self.__nilai_akhir >= 70:
+            return "B"
+        elif self.__nilai_akhir >= 60:
+            return "C"
+        else:
+            return "D"
+
+    # Lulus / tidak
+    def is_lulus(self):
+        return self.__nilai_akhir >= 60
