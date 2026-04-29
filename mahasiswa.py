@@ -16,7 +16,7 @@ class Mahasiswa:
         self.__nilai_akhir = (
             self.__nilai_tugas * 0.3 +   #nilai tugas nya diambil 30 % (kami menggunakan desimal (float))
             self.__nilai_uts * 0.3 +     #nilai uts nya diambil 30 %
-            self.__nilai_uas * 0.4       #nilai uas nya diambil 30 %
+            self.__nilai_uas * 0.4       #nilai uas nya diambil 40 %
         )
         
     def set_nilai(self, tugas, uts, uas):
@@ -26,18 +26,4 @@ class Mahasiswa:
             self.__nilai_uas = uas
             self.menghitung_nilai_akhir()
         else:
-            print("Masukkan nilai dengan angka anatar 0 - 100")
-            # Grade
-    def get_grade(self):
-        if self.__nilai_akhir >= 85:
-            return "A"
-        elif self.__nilai_akhir >= 70:
-            return "B"
-        elif self.__nilai_akhir >= 60:
-            return "C"
-        else:
-            return "D"
-
-    # Lulus / tidak
-    def is_lulus(self):
-        return self.__nilai_akhir >= 60
+           print("Masukkan nilai dengan angka anatar 0 - 100")
