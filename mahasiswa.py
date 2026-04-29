@@ -27,6 +27,7 @@ class Mahasiswa:
             self.menghitung_nilai_akhir()
         else:
             print("Masukkan nilai dengan angka anatar 0 - 100")
+
             # Grade
     def get_grade(self):
         if self.__nilai_akhir >= 85:
@@ -41,3 +42,30 @@ class Mahasiswa:
     # Lulus / tidak
     def is_lulus(self):
         return self.__nilai_akhir >= 60 
+
+# Update nilai
+    def update_nilai(self, jenis, nilai):
+        if not self.__validasi(nilai):
+            print("Nilai tidak valid")
+            return
+
+        if jenis == "tugas":
+            self.__nilai_tugas = nilai
+        elif jenis == "uts":
+            self.__nilai_uts = nilai
+        elif jenis == "uas":
+            self.__nilai_uas = nilai
+        else:
+            print("Jenis nilai tidak dikenali")
+            return
+
+        self.hitung_nilai_akhir()
+
+    # Info mahasiswa
+    def info(self):
+        print(f"Nama  : {self.__nama}")
+        print(f"NIM   : {self.__nim}")
+        print(f"Nilai Akhir : {self.__nilai_akhir:.2f}")
+        print(f"Grade : {self.get_grade()}")
+        print(f"Lulus : {'Ya' if self.is_lulus() else 'Tidak'}")
+        print("-" * 30)
