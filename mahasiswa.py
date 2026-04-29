@@ -59,7 +59,7 @@ class Mahasiswa:
             print("Jenis nilai tidak dikenali")
             return
 
-        self.hitung_nilai_akhir()
+        self.menghitung_nilai_akhir()
 
     # Info mahasiswa
     def info(self):
@@ -69,3 +69,24 @@ class Mahasiswa:
         print(f"Grade : {self.get_grade()}")
         print(f"Lulus : {'Ya' if self.is_lulus() else 'Tidak'}")
         print("-" * 30)
+
+mhs1 = Mahasiswa("CUMIE", "1292929")
+mhs2 = Mahasiswa("SYESYE", "91090192")
+mhs3 = Mahasiswa("HONEY", "138911001")
+
+# Input nilai
+mhs1.set_nilai(80, 75, 90)
+mhs2.set_nilai(60, 65, 70)
+mhs3.set_nilai(85, 90, 88)
+
+# Tampilkan data
+print("=== DATA MAHASISWA ===")
+mhs1.info()
+mhs2.info()
+mhs3.info()
+
+# Update nilai
+print("=== UPDATE NILAI HONEY (UTS) ===")
+mhs2.update_nilai("uts", 90)
+
+mhs2.info()
